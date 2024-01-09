@@ -20,7 +20,9 @@ app.get("/", (req, res) => {
   return res.status(200).send("Welcome to Food server");
 });
 
+app.use("/api/v1/auth", require("./routes/authRoutes"));
+
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running at PORT ${PORT}`);
-}); 
+});
